@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vtpiCJcuXl2k5AxsdQNTxbA8mlhqXNiQ881KzzdAabD73FbGqNSP/SAG/UzvqDrX7sUIFBtxrbq85rr42PIyyQ==",
+  "dgSpecHash": "o62fV4Rvvd6CpL/aGQ5g4EOl9CnzYyNhwXiHtZefyXyg8ywBPaoeklLVbN/oc6RzxtmqVxUKnRt+SmmFeewXeA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\porum\\source\\repos\\demos\\WebWithMultipleSpa\\web\\WebWithMultipleSpa.csproj",
+  "projectFilePath": "C:\\Users\\porum\\source\\repos\\github\\webWithMultipleSpa\\web\\WebWithMultipleSpa.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\porum\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0-rc.1.23421.29\\microsoft.aspnetcore.openapi.8.0.0-rc.1.23421.29.nupkg.sha512",
     "C:\\Users\\porum\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

@@ -545,11 +545,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\porum\\source\\repos\\demos\\WebWithMultipleSpa\\web\\WebWithMultipleSpa.csproj",
+      "projectUniqueName": "C:\\Users\\porum\\source\\repos\\github\\webWithMultipleSpa\\web\\WebWithMultipleSpa.csproj",
       "projectName": "WebWithMultipleSpa",
-      "projectPath": "C:\\Users\\porum\\source\\repos\\demos\\WebWithMultipleSpa\\web\\WebWithMultipleSpa.csproj",
+      "projectPath": "C:\\Users\\porum\\source\\repos\\github\\webWithMultipleSpa\\web\\WebWithMultipleSpa.csproj",
       "packagesPath": "C:\\Users\\porum\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\porum\\source\\repos\\demos\\WebWithMultipleSpa\\web\\obj\\",
+      "outputPath": "C:\\Users\\porum\\source\\repos\\github\\webWithMultipleSpa\\web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -615,7 +615,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.1.23455.8/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.1.23463.5/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
