@@ -1,3 +1,5 @@
+using WebWithMultipleSpa.Middlewares;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
+
+var services = builder.Services;
+//services.AddTelemetryConsumer<ForwarderTelemetry>();
+//services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -36,9 +42,29 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast")
-.WithOpenApi();
+//.WithOpenApi()
+;
 
-app.MapReverseProxy();
+app.MapReverseProxy(proxyPipeline =>
+{
+    proxyPipeline.Use((context, next) =>
+    {
+        if (!CheckIsSubpathRoute(context, out var reason))
+        {
+            context.Response.StatusCode = 200;
+            return context.Response.WriteAsync(reason);
+        }
+        return next(context);
+    });
+    proxyPipeline.UseSessionAffinity();
+    proxyPipeline.UseLoadBalancing();
+});
+
+bool CheckIsSubpathRoute(HttpContext context, out string reason)
+{
+    reason = "Will Not work";
+    return true;
+}
 
 app.Run();
 

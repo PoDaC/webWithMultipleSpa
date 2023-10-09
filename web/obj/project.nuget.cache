@@ -1,16 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "o62fV4Rvvd6CpL/aGQ5g4EOl9CnzYyNhwXiHtZefyXyg8ywBPaoeklLVbN/oc6RzxtmqVxUKnRt+SmmFeewXeA==",
+  "dgSpecHash": "Mw0MrNYt9+F9qFWAues1fsuvqIz7DzPXze80bBEgotqmMkfQ39JTyk0absXF9DRTGm/cmvJ+5ftKIiLug/QPBg==",
   "success": true,
   "projectFilePath": "C:\\Users\\porum\\source\\repos\\github\\webWithMultipleSpa\\web\\WebWithMultipleSpa.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\porum\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0-rc.1.23421.29\\microsoft.aspnetcore.openapi.8.0.0-rc.1.23421.29.nupkg.sha512",
     "C:\\Users\\porum\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\porum\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
-    "C:\\Users\\porum\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
-    "C:\\Users\\porum\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
-    "C:\\Users\\porum\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
-    "C:\\Users\\porum\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "C:\\Users\\porum\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\porum\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\porum\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\porum\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\porum\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\porum\\.nuget\\packages\\system.io.hashing\\7.0.0\\system.io.hashing.7.0.0.nupkg.sha512",
     "C:\\Users\\porum\\.nuget\\packages\\yarp.reverseproxy\\2.0.1\\yarp.reverseproxy.2.0.1.nupkg.sha512"
   ],
