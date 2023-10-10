@@ -1,4 +1,8 @@
+using Microsoft.AspNetCore.Http;
+using System.Text;
+using System.Text.RegularExpressions;
 using WebWithMultipleSpa.Middlewares;
+using Yarp.ReverseProxy.Transforms;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,21 +53,40 @@ app.MapReverseProxy(proxyPipeline =>
 {
     proxyPipeline.Use((context, next) =>
     {
-        if (!CheckIsSubpathRoute(context, out var reason))
+        var endPoint = $"{context.Request.Scheme}://{context.Request.Host}";
+        var proxyFeature = context.GetReverseProxyFeature();
+        var routeId = proxyFeature.Route.Config.RouteId;
+
+        if (CheckIsSubpathRoute(context, routeId))
         {
-            context.Response.StatusCode = 200;
-            return context.Response.WriteAsync(reason);
+            var routeValues = context.Request.RouteValues.Values;
+            var pathChilds = default(string);
+            foreach (var routeValue in routeValues)
+                pathChilds += $"/{routeValue}";
+            var redirectUti = $"{endPoint}/{routeId}#/{pathChilds}";
+            context.Response.Redirect(redirectUti);
+
+            return Task.CompletedTask;
         }
-        return next(context);
+        return next();
     });
     proxyPipeline.UseSessionAffinity();
     proxyPipeline.UseLoadBalancing();
 });
 
-bool CheckIsSubpathRoute(HttpContext context, out string reason)
+bool CheckIsSubpathRoute(HttpContext context, string routeId)
 {
-    reason = "Will Not work";
-    return true;
+    var isMainPath = context.Request.Path.HasValue && Path.GetExtension(context.Request.Path.Value) == string.Empty;
+    if (isMainPath)
+    {
+        return context.Request.Path.Value
+            .Split("/")
+            .Where(x => x!="")
+            .ToArray()
+            .Length > 1;
+
+    }
+    return isMainPath;
 }
 
 app.Run();
