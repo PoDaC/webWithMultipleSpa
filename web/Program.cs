@@ -63,7 +63,7 @@ app.MapReverseProxy(proxyPipeline =>
             var pathChilds = default(string);
             foreach (var routeValue in routeValues)
                 pathChilds += $"/{routeValue}";
-            var redirectUti = $"{endPoint}/{routeId}#/{pathChilds}";
+            var redirectUti = $"{endPoint}/{routeId}#/{pathChilds}/index.html";
             context.Response.Redirect(redirectUti);
 
             return Task.CompletedTask;
