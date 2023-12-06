@@ -29,6 +29,13 @@ export class App {
         moduleId: PLATFORM.moduleName('./child-router'),
         nav: true,
         title: 'Child Router'
+      },
+      {
+        route: 'profiles',
+        name: 'profiles',
+        moduleId: PLATFORM.moduleName('./profiles'),
+        nav: true,
+        title: 'Profiles'
       }
     ]);
 

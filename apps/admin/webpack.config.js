@@ -17,7 +17,7 @@ const when = (condition, config, negativeConfig) =>
 // primary config:
 const outDir = path.resolve(__dirname, project.platform.output);
 const srcDir = path.resolve(__dirname, 'src');
-const baseUrl = '/admin';
+const baseUrl = '/admin/';
 
 const cssRules = [
   {
@@ -186,7 +186,9 @@ module.exports = ({ production }, { analyze, hmr, port, host }) => ({
   performance: { hints: false },
   devServer: {
     // serve index.html for all 404 (required for push-state)
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: baseUrl
+    },
     open: project.platform.open,
     hot: hmr || project.platform.hmr,
     port: port || project.platform.port,

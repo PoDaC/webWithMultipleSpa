@@ -48,31 +48,34 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 //.WithOpenApi()
 ;
+app.MapReverseProxy();
 
-app.MapReverseProxy(proxyPipeline =>
-{
-    proxyPipeline.Use((context, next) =>
-    {
-        var endPoint = $"{context.Request.Scheme}://{context.Request.Host}";
-        var proxyFeature = context.GetReverseProxyFeature();
-        var routeId = proxyFeature.Route.Config.RouteId;
+//app.MapReverseProxy(proxyPipeline =>
+//{
+//    proxyPipeline.Use((context, next) =>
+//    {
+//        var endPoint = $"{context.Request.Scheme}://{context.Request.Host}";
+//        var proxyFeature = context.GetReverseProxyFeature();
+//        var routeId = proxyFeature.Route.Config.RouteId;
 
-        if (CheckIsSubpathRoute(context, routeId))
-        {
-            var routeValues = context.Request.RouteValues.Values;
-            var pathChilds = default(string);
-            foreach (var routeValue in routeValues)
-                pathChilds += $"/{routeValue}";
-            var redirectUti = $"{endPoint}/{routeId}#/{pathChilds}/index.html";
-            context.Response.Redirect(redirectUti);
+//        if (CheckIsSubpathRoute(context, routeId))
+//        {
+//            var routeValues = context.Request.RouteValues.Values;
+//            var pathChilds = default(string);
+//            foreach (var routeValue in routeValues)
+//                pathChilds += $"/{routeValue}";
+//            var redirectUri = $"{endPoint}/{routeId}{pathChilds}";
+//            redirectUri += context.Request.QueryString.HasValue ? context.Request.QueryString.Value : null;
 
-            return Task.CompletedTask;
-        }
-        return next();
-    });
-    proxyPipeline.UseSessionAffinity();
-    proxyPipeline.UseLoadBalancing();
-});
+//            context.Response.Redirect(redirectUri);
+
+//            return Task.CompletedTask;
+//        }
+//        return next();
+//    });
+//    proxyPipeline.UseSessionAffinity();
+//    proxyPipeline.UseLoadBalancing();
+//});
 
 bool CheckIsSubpathRoute(HttpContext context, string routeId)
 {
@@ -81,10 +84,9 @@ bool CheckIsSubpathRoute(HttpContext context, string routeId)
     {
         return context.Request.Path.Value
             .Split("/")
-            .Where(x => x!="")
+            .Where(x => x != "")
             .ToArray()
             .Length > 1;
-
     }
     return isMainPath;
 }

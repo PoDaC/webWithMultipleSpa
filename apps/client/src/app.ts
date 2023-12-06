@@ -6,7 +6,7 @@ export class App {
 
   public configureRouter(config: RouterConfiguration, router: Router): Promise<void> | PromiseLike<void> | void {
     config.title = 'Aurelia';
-    config.options.root='/client'
+    config.options.root='/client';    
     config.map([
       {
         route: ['', 'welcome'],
